@@ -8,27 +8,163 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/main.css">
+
+    <script type="text/javascript">
+
+        function vidplay() {
+           var video = document.getElementById("video");
+           var button = document.getElementById("play");
+           if (video.paused) {
+              video.play();
+              button.textContent = "||";
+           } else {
+              video.pause();
+              button.textContent = ">";
+           }
+        }
+
+        function restart() {
+            var video = document.getElementById("video");
+            video.currentTime = 0;
+        }
+
+        function skip(value) {
+            var video = document.getElementById("video");
+            video.currentTime += value;
+        }      
+    </script>
   </head>
   <body>
-
-    <h1>HTML Video and Audio</h1>
     
     <div class="wrapper">
       
-      <h2>Video Example</h2>
-      
-      <video controls>
-        <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.mp4" type="video/mp4">
-        <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.ogg" type="video/ogg">
-        <track label="English" kind="subtitles" srclang="en" src="bridge-captions.vtt" default>
-      </video>
-      
-      <h2>Audio Example</h2>
-      
-      <audio controls>
-        <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge-audio.mp3" type="audio/mp3">
-      </audio>
-      
+    <figure id="videoContainer">
+       <video id="video" controls preload="metadata" poster="img/poster.jpg">
+          <source src="video/video.mp4" type="video/mp4">
+          <source src="video/video.ogg" type="video/ogg">
+          <!-- Flash fallback -->
+          <object type="application/x-shockwave-flash" data="flash-player.swf?videoUrl=video/tears-of-steel-battle-clip-medium.mp4" width="1024" height="576">
+             <param name="movie" value="flash-player.swf?videoUrl=video/tears-of-steel-battle-clip-medium.mp4" />
+             <param name="allowfullscreen" value="true" />
+             <param name="wmode" value="transparent" />
+             <param name="flashvars" value="controlbar=over&amp;image=img/poster.jpg&amp;file=flash-player.swf?videoUrl=video/tears-of-steel-battle-clip-medium.mp4" />
+             <img alt="Tears of Steel poster image" src="img/poster.jpg" width="1024" height="428" title="No video playback possible, please download the video from the link below" />
+          </object>
+          <!-- Offer download -->
+          <a href="video/tears-of-steel-battle-clip-medium.mp4">Download MP4</a>
+       </video>
+    </figure>
+
+      <div class="subtitles">
+        <p>
+          1
+          00:00:00,240 --> 00:00:04,130
+          Now that we've looked at the architecture
+          of the internet, let's see how you might
+        </p>
+
+        <p>
+          2
+          00:00:04,130 --> 00:00:07,535
+          connect your personal devices to
+          the internet inside your house.
+        </p>
+
+        <p>
+          3
+          00:00:07,535 --> 00:00:11,270
+          Well there are many ways to
+          connect to the internet, and
+        </p>
+
+        <p>
+          4
+          00:00:11,270 --> 00:00:13,960
+          most often people connect wirelessly.
+        </p>
+
+        <p>
+          5
+          00:00:13,960 --> 00:00:17,940
+          Let's look at an example of how
+          you can connect to the internet.
+        </p>
+
+        <p>
+          6
+          00:00:17,940 --> 00:00:22,370
+          If you live in a city or a town,
+          you probably have a coaxial cable for
+        </p>
+
+        <p>
+          7
+          00:00:22,370 --> 00:00:26,880
+          cable Internet, or a phone line if you
+          have DSL, running to the outside of
+        </p>
+
+        <p>
+          8
+          00:00:26,880 --> 00:00:30,920
+          your house, that connects you to
+          the Internet Service Provider, or ISP.
+        </p>
+        
+        <p>
+          9
+          00:00:32,100 --> 00:00:34,730
+          If you live far out in the country,
+          you'll more likely have
+        </p>
+
+        <p>
+          10
+          00:00:34,730 --> 00:00:39,430
+          a dish outside your house, connecting
+          you wirelessly to your closest ISP, or
+        </p>
+
+        <p>
+          11
+          00:00:39,430 --> 00:00:41,190
+          you might also use the telephone system.
+        </p>
+
+        <p>
+          12
+          00:00:42,350 --> 00:00:46,300
+          Whether a wire comes straight from
+          the ISP hookup outside your house, or
+        </p>
+
+        <p>
+          13
+          00:00:46,300 --> 00:00:49,270
+          it travels over radio
+          waves from your roof,
+        </p>
+
+        <p>
+          14
+          00:00:49,270 --> 00:00:53,760
+          the first stop a wire will make once
+          inside your house, is at your modem.
+        </p>
+
+        <p>
+          15
+          00:00:53,760 --> 00:00:57,780
+          A modem is what connects the internet
+          to your network at home.
+        </p>
+
+        <p>
+          16
+          00:00:57,780 --> 00:01:00,150
+          A few common residential modems are DSL or
+        </p>
+      </div>
     </div>
 
   </body>

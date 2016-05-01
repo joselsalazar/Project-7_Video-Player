@@ -10,11 +10,25 @@ body {
 }
 
 .wrapper {
-  max-width: 90%;
-  margin: 10px auto;
-  padding: 10px 20px;
   background: #f4f7f8;
   border-radius: 8px;
+  margin: 0 auto;
+}
+
+video {
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+}
+
+.controls {
+   width:100%;
+   height:8.0971659919028340080971659919028%; /* of figure's height */
+   position:relative;
+}
+
+.controls[data-state=visible] {
+   display:block;
 }
 
 h1, h2 {
@@ -22,7 +36,18 @@ h1, h2 {
   text-align: center;
 }
 
-video, audio, .mejs-treehouse {
-  margin: 0 auto;
-  display: block;
+.subtitles {
+  padding: 0 10% 10%;
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .wrapper {
+    width: 60%;
+  }
 }
